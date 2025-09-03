@@ -103,6 +103,31 @@
     background: linear-gradient(135deg, var(--card-face-pink) 0%, #c2185b 100%);
 }
 
+.card-front.heart { 
+    background: linear-gradient(135deg, #e53935 0%, #d32f2f 100%);
+}
+
+.card-front.yellow-square {
+    background: linear-gradient(135deg, #fdd835 0%, #fbc02d 100%); 
+}
+
+.card-front.diamond { 
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); 
+}
+
+.card-front.lightning { 
+    background: linear-gradient(135deg, #ffeb3b 0%, #fbc02d 100%); 
+}
+
+.card-front.clover { 
+    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); 
+}
+
+.card-front.fire { background: 
+    linear-gradient(135deg, #ff5722 0%, #e64a19 100%); 
+}
+
+
 /* Button Styles */
 .btn {
     display: inline-flex;

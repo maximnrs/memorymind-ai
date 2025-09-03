@@ -283,8 +283,12 @@ class GameUtils {
      * Game-specific constants
      */
     static GAME_CONSTANTS = {
-        SYMBOLS: ['⭐', '🔵', '🔺', '🟩'],
-        SYMBOL_NAMES: ['star', 'circle', 'triangle', 'square'],
+        SYMBOLS: [
+            '⭐', '🔵', '🔺', '🟩', '❤️', '🟨', '💎', '⚡', '🍀', '🔥'
+        ],
+        SYMBOL_NAMES: [
+            'star', 'circle', 'triangle', 'square', 'heart', 'yellow-square', 'diamond', 'lightning', 'clover', 'fire'
+        ],
         DIFFICULTIES: {
             beginner: { rows: 4, cols: 4, aiAccuracy: 0.7 },
             intermediate: { rows: 4, cols: 6, aiAccuracy: 0.85 },
