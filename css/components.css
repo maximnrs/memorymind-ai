@@ -17,14 +17,12 @@
 .card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
     border-radius: var(--border-radius-md);
     opacity: 0;
     transition: opacity var(--transition-normal);
+    pointer-events: none;
 }
 
 .card:hover::before {
@@ -42,9 +40,13 @@
 
 .card.matched {
     opacity: 0.6;
-    transform: scale(0.95);
+    transform: scale(0.90);
     cursor: default;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    box-shadow:
+        0 0 20px rgba(76, 175, 80, 0.8),
+        0 0 40px rgba(76, 175, 80, 0.35);
+}
+
 /* Ripple celebration ring */
 .card.matched::before {
     content: '';
@@ -208,10 +210,9 @@
     background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); 
 }
 
-.card-front.fire { background: 
-    linear-gradient(135deg, #ff5722 0%, #e64a19 100%); 
+.card-front.fire { 
+    background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%); 
 }
-
 
 /* Button Styles */
 .btn {
@@ -240,6 +241,7 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
+    pointer-events: none;
 }
 
 .btn:hover::before {
@@ -255,6 +257,11 @@
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+    transform: scale(0.96);
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .btn-secondary {
@@ -282,10 +289,7 @@
 /* Modal Styles */
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
     display: flex;
@@ -312,6 +316,7 @@
     overflow-y: auto;
     transform: scale(0.8);
     transition: transform var(--transition-normal);
+    text-align: center;
 }
 
 .modal.show .modal-content {
@@ -330,6 +335,13 @@
     color: var(--text-primary);
     font-size: 24px;
     margin: 0;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
 }
 
 .modal-close {
@@ -340,11 +352,12 @@
     cursor: pointer;
     padding: var(--spacing-sm);
     border-radius: 50%;
-    transition: background var(--transition-normal);
+    transition: background var(--transition-normal), transform var(--transition-fast);
 }
 
 .modal-close:hover {
     background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
 }
 
 .modal-body {
@@ -388,6 +401,7 @@
 .difficulty-option.selected {
     border-color: var(--accent-color);
     background: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 12px rgba(0,229,255,0.35);
 }
 
 /* Game Results */
@@ -427,12 +441,12 @@
     to { transform: rotate(360deg); }
 }
 
-/* Success/Error Messages */
+/* Success/Error/Warning Messages */
 .message {
     padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
     margin-bottom: var(--spacing-md);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .message.success {
@@ -456,7 +470,7 @@
 /* Pulse Animation for Matched Cards */
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.08); }
     100% { transform: scale(1); }
 }
 

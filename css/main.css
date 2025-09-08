@@ -46,10 +46,17 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: var(--primary-bg);
+    animation: gradientMove 15s ease infinite;
     color: var(--text-primary);
     min-height: 100vh;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Game Container */
@@ -88,6 +95,12 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: titlePulse 3s infinite ease-in-out;
+}
+
+@keyframes titlePulse {
+    0%, 100% { text-shadow: 0 0 8px var(--accent-color); }
+    50% { text-shadow: 0 0 20px var(--accent-color); }
 }
 
 .score-display {
@@ -157,11 +170,13 @@ body {
 .turn-indicator.player-turn {
     border: 2px solid var(--accent-color);
     background: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 15px var(--accent-color);
 }
 
 .turn-indicator.ai-turn {
     border: 2px solid var(--card-face-pink);
     background: rgba(233, 30, 99, 0.1);
+    box-shadow: 0 0 15px var(--card-face-pink);
 }
 
 /* Game Board */
@@ -359,4 +374,3 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
-
