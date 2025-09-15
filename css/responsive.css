@@ -1,0 +1,424 @@
+/* Responsive Design */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+    .game-board {
+        grid-template-columns: repeat(4, 120px);
+        gap: var(--spacing-lg);
+    }
+    
+    .card {
+        min-height: 120px;
+    }
+    
+    .game-main {
+        grid-template-columns: 1fr 350px;
+    }
+}
+
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .game-board {
+        grid-template-columns: repeat(4, 100px);
+        gap: var(--spacing-md);
+    }
+    
+    .card {
+        min-height: 100px;
+    }
+    
+    .game-main {
+        grid-template-columns: 1fr 280px;
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .game-main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .game-sidebar {
+        order: -1;
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+    
+    .statistics,
+    .ai-status {
+        flex: 1;
+    }
+    
+    .stat-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(4, 90px);
+        gap: var(--spacing-md);
+    }
+    
+    .card {
+        min-height: 90px;
+    }
+    
+    .header-content {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .score-display {
+        gap: var(--spacing-md);
+    }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .game-container {
+        padding: var(--spacing-sm);
+    }
+    
+    .game-main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .game-sidebar {
+        order: -1;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(4, 80px);
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+    
+    .card {
+        min-height: 80px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .score-display {
+        gap: var(--spacing-sm);
+    }
+    
+    .score-item {
+        min-width: 70px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .score-value {
+        font-size: 20px;
+    }
+    
+    .control-buttons {
+        gap: var(--spacing-sm);
+    }
+    
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 14px;
+    }
+    
+    .btn-text {
+        display: none;
+    }
+    
+    .btn-icon {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Small (320px - 575px) */
+@media (max-width: 575px) {
+    .game-container {
+        padding: var(--spacing-xs);
+    }
+    
+    .game-header,
+    .game-footer {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .game-main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .game-sidebar {
+        order: -1;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .statistics h3,
+    .ai-status h3 {
+        font-size: 16px;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-xs);
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    .stat-value {
+        font-size: 14px;
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(4, 70px);
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+    }
+    
+    .card {
+        min-height: 70px;
+    }
+    
+    .card-face {
+        font-size: clamp(18px, 5vw, 32px);
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .game-title {
+        font-size: clamp(20px, 6vw, 28px);
+    }
+    
+    .score-display {
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .score-item {
+        min-width: 60px;
+        padding: var(--spacing-xs);
+    }
+    
+    .score-label {
+        font-size: 12px;
+    }
+    
+    .score-value {
+        font-size: 18px;
+    }
+    
+    .turn-indicator {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 16px;
+    }
+    
+    .control-buttons {
+        gap: var(--spacing-xs);
+        justify-content: space-around;
+    }
+    
+    .btn {
+        padding: var(--spacing-sm);
+        min-width: 50px;
+        font-size: 12px;
+    }
+    
+    .btn-text {
+        display: none;
+    }
+    
+    .btn-icon {
+        font-size: 18px;
+    }
+    
+    /* Modal adjustments for mobile */
+    .modal-content {
+        width: 95%;
+        margin: var(--spacing-sm);
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: var(--spacing-md);
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .difficulty-option {
+        padding: var(--spacing-md);
+    }
+    
+    .difficulty-option h3 {
+        font-size: 16px;
+    }
+    
+    .difficulty-option p {
+        font-size: 13px;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .result-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Extra Small Mobile (max 320px) */
+@media (max-width: 320px) {
+    .game-board {
+        grid-template-columns: repeat(4, 60px);
+        gap: 4px;
+        padding: var(--spacing-xs);
+    }
+    
+    .card {
+        min-height: 60px;
+    }
+    
+    .card-face {
+        font-size: 16px;
+    }
+    
+    .game-title {
+        font-size: 18px;
+    }
+    
+    .score-value {
+        font-size: 16px;
+    }
+    
+    .turn-indicator {
+        font-size: 14px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .game-container {
+        padding: var(--spacing-xs);
+    }
+    
+    .game-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .game-main {
+        grid-template-columns: 1fr 250px;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .game-sidebar {
+        order: 0;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .statistics,
+    .ai-status {
+        padding: var(--spacing-sm);
+    }
+    
+    .statistics h3,
+    .ai-status h3 {
+        font-size: 14px;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(4, 60px);
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+    }
+    
+    .card {
+        min-height: 60px;
+    }
+    
+    .turn-indicator {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 14px;
+    }
+    
+    .game-footer {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .card-face {
+        text-rendering: optimizeLegibility;
+    }
+    
+    .game-title {
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #ffffff;
+        --text-secondary: #e0e0e0;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .thinking-animation .dot {
+        animation: none;
+    }
+    
+    .btn::before {
+        transition: none;
+    }
+    
+    .modal,
+    .modal-content {
+        transition: none;
+    }
+}
+

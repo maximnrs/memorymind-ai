@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryMind AI - Interactive Memory Game</title>
+    <meta name="description" content="Challenge your memory against an intelligent AI in this modern web-based memory card game">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="header-content">
+                <h1 class="game-title">MemoryMind AI</h1>
+                <div class="score-display">
+                    <div class="score-item player-score">
+                        <span class="score-label">Player</span>
+                        <span class="score-value" id="player-score">0</span>
+                    </div>
+                    <div class="score-item ai-score">
+                        <span class="score-label">AI</span>
+                        <span class="score-value" id="ai-score">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div class="game-board-container">
+                <div class="turn-indicator" id="turn-indicator">
+                    <span class="turn-text">Turn: <span id="current-turn">Player</span></span>
+                </div>
+                
+                <div class="game-board" id="game-board">
+                    <!-- Cards will be generated dynamically -->
+                </div>
+                
+                <div class="game-status" id="game-status">
+                    <p class="status-message" id="status-message">Click two cards to find matching pairs!</p>
+                </div>
+            </div>
+
+            <aside class="game-sidebar">
+                <div class="statistics">
+                    <h3>Game Statistics</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Moves</span>
+                            <span class="stat-value" id="moves-count">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time</span>
+                            <span class="stat-value" id="game-time">00:00</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Matches</span>
+                            <span class="stat-value" id="total-matches">0/8</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Difficulty</span>
+                            <span class="stat-value" id="difficulty-level">Beginner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-status">
+                    <h3>AI Status</h3>
+                    <div class="ai-info">
+                        <div class="ai-thinking" id="ai-thinking" style="display: none;">
+                            <div class="thinking-animation">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <span>AI is thinking...</span>
+                        </div>
+                        <div class="ai-memory">
+                            <span class="ai-label">Memory Accuracy:</span>
+                            <span class="ai-value" id="ai-accuracy">70%</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="game-footer">
+            <div class="control-buttons">
+                <button class="btn btn-primary" id="restart-btn">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Restart</span>
+                </button>
+                <button class="btn btn-secondary" id="difficulty-btn">
+                    <span class="btn-icon">⚙️</span>
+                    <span class="btn-text">Difficulty</span>
+                </button>
+                <button class="btn btn-secondary" id="help-btn">
+                    <span class="btn-icon">❓</span>
+                    <span class="btn-text">Help</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Difficulty Selection Modal -->
+    <div class="modal" id="difficulty-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select Difficulty</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="difficulty-options">
+                    <button class="difficulty-option" data-difficulty="beginner">
+                        <h3>Beginner</h3>
+                        <p>4×4 Grid • AI Memory: 70%</p>
+                    </button>
+                    <button class="difficulty-option" data-difficulty="intermediate">
+                        <h3>Intermediate</h3>
+                        <p>4×6 Grid • AI Memory: 85%</p>
+                    </button>
+                    <button class="difficulty-option" data-difficulty="advanced">
+                        <h3>Advanced</h3>
+                        <p>6×6 Grid • AI Memory: 95%</p>
+                    </button>
+                    <button class="difficulty-option" data-difficulty="expert">
+                        <h3>Expert</h3>
+                        <p>6×8 Grid • AI Memory: 98%</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal" id="game-over-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="game-result-title">Game Over</h2>
+            </div>
+            <div class="modal-body">
+                <div class="game-results">
+                    <div class="result-stats">
+                        <p>Final Score: <span id="final-player-score">0</span> - <span id="final-ai-score">0</span></p>
+                        <p>Total Moves: <span id="final-moves">0</span></p>
+                        <p>Game Time: <span id="final-time">00:00</span></p>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn btn-primary" id="play-again-btn">Play Again</button>
+                        <button class="btn btn-secondary" id="change-difficulty-btn">Change Difficulty</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        // Initialize the game when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const game = new MemoryGame();
+            game.init();
+        });
+    </script>
+</body>
+</html>
