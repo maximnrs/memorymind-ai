@@ -338,6 +338,7 @@ body {
 .control-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: var(--spacing-md);
     flex-wrap: wrap;
 }
