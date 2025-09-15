@@ -251,12 +251,13 @@
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-color) 0%, #0288d1 100%);
     color: white;
+    border: 2px solid var(--accent-color);
     box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--text-primary);
 }
 
 .btn:active {
