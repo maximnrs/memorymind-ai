@@ -110,17 +110,15 @@ body {
 
 .score-item {
     text-align: center;
-    padding: var(--spacing-sm) var(--spacing-md);
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-md);
-    min-width: 80px;
+    min-width: 72px;
 }
 
 .score-label {
     display: block;
     font-size: 14px;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-xs);
 }
 
 .score-value {
