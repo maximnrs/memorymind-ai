@@ -118,13 +118,14 @@ body {
 .score-label {
     display: block;
     font-size: 14px;
+    font-weight: 500;
     color: var(--text-secondary);
 }
 
 .score-value {
     display: block;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
