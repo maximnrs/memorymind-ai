@@ -6,7 +6,7 @@
     cursor: pointer;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s, box-shadow 0.3s;
+    transition: transform 0.5s, box-shadow 0.3s;
     box-shadow: var(--shadow-md);
     min-height: 80px;
     display: flex;
@@ -38,17 +38,8 @@
     transform: rotateY(180deg);
 }
 
-.card.matched {
-    opacity: 0.6;
-    transform: scale(0.90);
-    cursor: default;
-    box-shadow:
-        0 0 20px rgba(76, 175, 80, 0.8),
-        0 0 40px rgba(76, 175, 80, 0.35);
-}
-
 /* Ripple celebration ring */
-.card.matched::before {
+.card.flipped::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -64,7 +55,7 @@
 }
 
 /* Confetti burst (multi box-shadow animation) */
-.card.matched::after {
+.card.flipped::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -90,6 +81,15 @@
         0 0 0 0 #ffc107,
         0 0 0 0 #3f51b5;
     animation: confetti-burst 700ms ease-out forwards;
+}
+
+.card.matched {
+    opacity: 0.6;
+    transform: scale(0.90);
+    cursor: default;
+    box-shadow:
+        0 0 20px rgba(76, 175, 80, 0.8),
+        0 0 40px rgba(76, 175, 80, 0.35);
 }
 
 @keyframes ripple {
@@ -150,7 +150,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(24px, 4vw, 48px);
+    font-size: clamp(16px, 4vw, 36px);
 }
 
 .card-back {
@@ -251,12 +251,13 @@
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-color) 0%, #0288d1 100%);
     color: white;
+    border: 2px solid var(--accent-color);
     box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--text-primary);
 }
 
 .btn:active {
@@ -465,17 +466,6 @@
     background: rgba(255, 152, 0, 0.2);
     border: 1px solid var(--warning-color);
     color: var(--warning-color);
-}
-
-/* Pulse Animation for Matched Cards */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
-}
-
-.card.pulse {
-    animation: pulse 0.6s ease-in-out;
 }
 
 /* Shake Animation for Wrong Matches */

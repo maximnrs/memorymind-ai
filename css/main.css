@@ -1,6 +1,6 @@
 /* CSS Custom Properties for Theme */
 :root {
-    --primary-bg: linear-gradient(135deg, #1a237e 0%, #6a1b9a 100%);
+    --primary-bg: linear-gradient(135deg, #2633b9 0%, #6a1b9a 100%);
     --card-back-color: #1976d2;
     --card-face-orange: #ff9800;
     --card-face-teal: #00bcd4;
@@ -74,7 +74,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
     box-shadow: var(--shadow-md);
 }
@@ -110,23 +110,22 @@ body {
 
 .score-item {
     text-align: center;
-    padding: var(--spacing-sm) var(--spacing-md);
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-md);
-    min-width: 80px;
+    min-width: 72px;
 }
 
 .score-label {
     display: block;
     font-size: 14px;
+    font-weight: 500;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-xs);
 }
 
 .score-value {
     display: block;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -158,7 +157,7 @@ body {
 .turn-indicator {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-md);
     border-radius: var(--border-radius-lg);
     text-align: center;
     font-size: 18px;
@@ -194,7 +193,7 @@ body {
 /* Game Status */
 .game-status {
     text-align: center;
-    padding: var(--spacing-md);
+    padding-top: var(--spacing-sm);
 }
 
 .status-message {
@@ -219,12 +218,19 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.statistics h3,
-.ai-status h3 {
+.statistics h3 {
     font-size: 18px;
     margin-bottom: var(--spacing-md);
     color: var(--text-primary);
     border-bottom: 2px solid var(--accent-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+.ai-status h3 {
+    font-size: 18px;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--card-face-pink);
     padding-bottom: var(--spacing-sm);
 }
 
@@ -331,6 +337,7 @@ body {
 .control-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: var(--spacing-md);
     flex-wrap: wrap;
 }
