@@ -303,11 +303,11 @@ class GameUI {
         for (const cardIndex of cardIndices) {
             const cardElement = this.getCardElement(cardIndex);
             if (cardElement) {
-                cardElement.classList.add('matched');
+                cardElement.classList.add('flipped');
                 cardElement.setAttribute('aria-label', `Card ${cardIndex + 1}, matched`);
                 
                 // Add pulse animation
-                await GameUtils.animateElement(cardElement, 'pulse', 
+                await GameUtils.animateElement(cardElement, 
                     GameUtils.GAME_CONSTANTS.ANIMATION_DURATIONS.cardMatch);
             }
         }
