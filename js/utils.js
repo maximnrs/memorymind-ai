@@ -296,10 +296,10 @@ class GameUtils {
             expert: { rows: 6, cols: 8, aiAccuracy: 0.98 }
         },
         ANIMATION_DURATIONS: {
-            cardFlip: 600,
-            cardMatch: 800,
-            cardShake: 500,
-            aiThinking: 1500
+            cardFlip: 400,
+            cardMatch: 600,
+            cardShake: 350,
+            aiThinking: 700
         },
         STORAGE_KEYS: {
             gameStats: 'memorymind_stats',
